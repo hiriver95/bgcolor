@@ -17,10 +17,29 @@
     .bgcolor--gray {
       background-color: lightgray;
     }
+
+    .bts {
+      width: 1320px;
+      margin: 0 auto;
+    }
+
+    [class^="btn"] {
+      width: 300px;
+      height: 50px;
+      background: white;
+      margin-top: 50px;
+    }
+
+    [class^="btn"]:hover {
+        opacity: .5;
+        transition: 1s;
+        transform: translate(0, -10px);
+    }
+  </style>
   </style>
 </head>
 <body>
-  <div class="btns">
+  <div class="bts">
   <button class="btn_toggle">토글</button>
   <button class="btn--reset">리셋</button>
   <button class="btn--bggray">변경(그레이)</button>
@@ -37,8 +56,7 @@
 
     const btnReset = document.querySelector('.btn--reset');
     btnReset.addEventListener('click', function() {
-    document.body.classList.remove('bgcolor--blue');
-    document.body.classList.remove('bgcolor--gray');
+    document.body.classList.remove('bgcolor--blue', 'bgcolor--gray');
     }); 
     
     const bgGray = document.querySelector('.btn--bggray');
