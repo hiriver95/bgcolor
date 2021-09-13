@@ -13,16 +13,36 @@
     .bgcolor--blue {
       background-color: lightblue;
     }
+
+    .bgcolor--gray {
+      background-color: lightgray;
+    }
   </style>
 </head>
 <body>
-  <button class="btn_bg">Button</button>
+  <div class="btns">
+  <button class="btn_toggle">토글</button>
+  <button class="btn--reset">리셋</button>
+  <button class="btn--bggray">변경(그레이)</button>
+  <!-- 속성을 표기할땐 언더바(_)
+      변형을 일으킨다면 바2개(--) -->
+</div>
   <script>
-    const btnBg = document.querySelector('.btn_bg');
+    const btnToggle = document.querySelector('.btn_toggle');
     // addEventListener('이벤트', '실행함수');
-    btnBg.addEventListener('click', function() {
+    btnToggle.addEventListener('click', function() {
       document.body.classList.toggle('bgcolor--blue');
       // console.log('버튼클릭');
+    });
+
+    const btnReset = document.querySelector('.btn--reset');
+    btnReset.addEventListener('click', function() {
+    document.body.classList.remove('bgcolor--blue');
+    }); 
+    
+    const bgColorgray  = document.querySelector('.btn--bggray');
+    bgColorGray.addEventListener('click', function() { 
+      document.body.classList.add('bgcolor--gray');
     });
     
     </script>
