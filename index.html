@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,22 +8,71 @@
   <style>
     body {
       background-color: lightyellow;
-    }
+      transition: 1s;
+    }   
     
     .bgcolor--blue {
       background-color: lightblue;
+      transition: 1s;
     }
 
     .bgcolor--gray {
       background-color: lightgray;
+      transition: 1s;
     }
+
+    [class^=btn] {
+      width: 300px;
+      height: 50px;
+      color: blue;
+      background: #f3f3f3;
+      position: relative;
+      margin: 20px auto;
+      transition: 1s;
+      box-sizing: border-box;
+    }
+
+    [class^=btn]::after {
+      width: 300px;
+      height: 0;
+      display: inline;
+      content: '';
+      position: relative;
+      box-sizing: border-box;
+      transition: width 2s, height 1s;
+      margin: 0 auto;
+    }
+
+    [class^=btn]:hover {
+
+    }
+
+    [class^=btn]:hover::after{
+      width: 300px;
+      height: 50px;
+      background: #000000;
+      opacity: .2;
+      position: absolute;
+      z-index: 0;
+      top: -1px;
+      left: -1px;
+      display: inline-block;
+    }
+
+    .bts {
+      margin: 0 auto;
+      width: 1320px;
+      vertical-align::auto  ;
+    }
+    
   </style>
 </head>
 <body>
-  <div class="btns">
+  <div class="bts">
   <button class="btn_toggle">토글</button>
   <button class="btn--reset">리셋</button>
   <button class="btn--bggray">변경(그레이)</button>
+  <button class="btn--bgimg">배경이미지</button>
   <!-- 속성을 표기할땐 언더바(_)
       변형을 일으킨다면 바2개(--) -->
 </div>
