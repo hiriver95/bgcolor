@@ -1,0 +1,38 @@
+marquee:hover {
+    color: blueviolet;
+    transition: 1s;
+}
+
+pre {
+    color: red;
+}
+
+html {
+    background: #ebeaea;
+}
+
+h1 {
+    font-size: 400px;
+    position: absolute;
+    top: 0%;
+    left: 28%;
+    margin: 0%;
+}
+
+span {
+    font-size: 200px;
+}
+
+marquee {
+    font-size: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #f1f1f1;
+    position: relative;
+    display: inline-block;
+}
+
+.container {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+}

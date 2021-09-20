@@ -7,8 +7,8 @@
   <title>Document</title>
   <style>
     body {
-      background-color: lightyellow;
       transition: 1s;
+      background: lightyellow;
     }   
     
     .bgcolor--blue {
@@ -20,16 +20,34 @@
       background-color: lightgray;
       transition: 1s;
     }
+    
+    .btn_toggle {
+      background: rgb(255, 232, 194);
+    }
+
+    .btn--reset {
+      background: rgb(146, 255, 244);
+    }
+
+    .btn--bggray {
+      background: rgb(93, 255, 160);
+    }
+
+    .btn--bgimg {
+      background: rgb(255, 107, 248);
+    }
 
     [class^=btn] {
       width: 300px;
       height: 50px;
-      color: blue;
-      background: #f3f3f3;
+      color: #191919;
+      font-size: 12px;
       position: relative;
       margin: 20px auto;
       transition: 1s;
       box-sizing: border-box;
+      border: none;
+      box-shadow: 1px 1px rgba(0, 0, 0, .2);
     }
 
     [class^=btn]::after {
@@ -41,10 +59,6 @@
       box-sizing: border-box;
       transition: width 2s, height 1s;
       margin: 0 auto;
-    }
-
-    [class^=btn]:hover {
-
     }
 
     [class^=btn]:hover::after{
@@ -62,9 +76,7 @@
     .bts {
       margin: 0 auto;
       width: 1320px;
-      vertical-align::auto  ;
     }
-    
   </style>
 </head>
 <body>
@@ -81,6 +93,7 @@
     // addEventListener('이벤트', '실행함수');
     btnToggle.addEventListener('click', function() {
       document.body.classList.toggle('bgcolor--blue');
+      document.body.style.removeProperty('background');
       // console.log('버튼클릭');
     });
 
@@ -88,13 +101,28 @@
     btnReset.addEventListener('click', function() {
     document.body.classList.remove('bgcolor--blue');
     document.body.classList.remove('bgcolor--gray');
+    document.body.style.removeProperty('background');
     }); 
     
     const bgGray = document.querySelector('.btn--bggray');
     bgGray.addEventListener('click', function() { 
       document.body.classList.add('bgcolor--gray');
+      document.body.style.removeProperty('background');
     });
-    
+
+    let i = 0;
+
+    const bgImg = document.querySelector('.btn--bgimg');
+    bgImg.addEventListener('click', function() {
+      if (i%2==0) {
+      document.body.style.background = 'url(/images/bridge.jpg)no-repeat';
+      ++i;
+    }
+      else {
+      document.body.style.removeProperty('background');
+      ++i;
+    }
+    });
     </script>
 </body>
 </html>
