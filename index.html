@@ -76,6 +76,7 @@
     .bts {
       margin: 0 auto;
       width: 1320px;
+      position: relative;
     }
 
     .bg__img {
@@ -110,7 +111,7 @@
     // addEventListener('이벤트', '실행함수');
     btnToggle.addEventListener('click', function() {
       document.body.classList.toggle('bgcolor--blue');
-      bgContainer.classList.remove('bg--img--show');
+      bgContainer.classList.remove('bg__img--show');
       // document.body.style.removeProperty('background');
       // console.log('버튼클릭');
     });
