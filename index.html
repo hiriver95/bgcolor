@@ -77,9 +77,25 @@
       margin: 0 auto;
       width: 1320px;
     }
+
+    .bg__img {
+      margin: 0;
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      background: url(/images/bridge.jpg) no-repeat;
+      transition: all 1s;
+      opacity: 0;
+    }
+
+    .bg__img--show {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <div class="bg__img"></div>
+  <div class="container">
   <div class="bts">
   <button class="btn_toggle">토글</button>
   <button class="btn--reset">리셋</button>
@@ -87,6 +103,7 @@
   <button class="btn--bgimg">배경이미지</button>
   <!-- 속성을 표기할땐 언더바(_)
       변형을 일으킨다면 바2개(--) -->
+</div>
 </div>
   <script>
     const btnToggle = document.querySelector('.btn_toggle');
@@ -110,18 +127,24 @@
       document.body.style.removeProperty('background');
     });
 
-    let i = 0;
+    // let i = 0;
 
-    const bgImg = document.querySelector('.btn--bgimg');
-    bgImg.addEventListener('click', function() {
-      if (i%2==0) {
-      document.body.style.background = 'url(/images/bridge.jpg)no-repeat';
-      ++i;
-    }
-      else {
-      document.body.style.removeProperty('background');
-      ++i;
-    }
+    // const bgImg = document.querySelector('.btn--bgimg');
+    // bgImg.addEventListener('click', function() {
+    //   if (i%2==0) {
+    //   document.body.style.background = 'url(/images/bridge.jpg)no-repeat';
+    //   ++i;
+    // }
+    //   else {
+    //   document.body.style.removeProperty('background');
+    //   ++i;
+    // }
+    // });
+    const bgContainer = document.querySelector('.bg__img')
+    const btnBgImg = document.querySelector('.btn--bgimg');
+    btnBgImg.addEventListener('click', function() {
+      bgContainer.classList.toggle('bg__img--show');
+    
     });
     </script>
 </body>
