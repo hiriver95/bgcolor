@@ -9,6 +9,7 @@
     body {
       transition: 1s;
       background: lightyellow;
+      height: 2000px;
     }   
     
     .bgcolor--blue {
@@ -55,7 +56,6 @@
       height: 0;
       display: inline;
       content: '';
-      position: relative;
       box-sizing: border-box;
       transition: width 2s, height 1s;
       margin: 0 auto;
@@ -73,10 +73,13 @@
       display: inline-block;
     }
 
-    .bts {
+    .bts {  
+      display: flex;
       margin: 0 auto;
       width: 1320px;
-      position: relative;
+      background: transparent;
+      transition: 0.5s;
+      justify-content: space-between;
     }
 
     .bg__img {
@@ -92,6 +95,15 @@
     .bg__img--show {
       opacity: 1;
     }
+
+    .bts.bgshow {
+      background: blueviolet;
+    }
+
+    .container {
+      margin: 0 auto;
+      margin-top: 200px;
+    }
   </style>
 </head>
 <body>
@@ -106,6 +118,7 @@
       변형을 일으킨다면 바2개(--) -->
 </div>
 </div>
+</body>
   <script>
     const btnToggle = document.querySelector('.btn_toggle');
     // addEventListener('이벤트', '실행함수');
@@ -149,9 +162,18 @@
     const btnBgImg = document.querySelector('.btn--bgimg');
     btnBgImg.addEventListener('click', function() {
       bgContainer.classList.toggle('bg__img--show');
-    
-    
     });
+
+    const  navContainer = document.querySelector('.bts');
+    document.addEventListener('scroll', function() {
+    console.log(window.scrollY);
+    if (window.scrollY > 100) {
+      navContainer.classList.add('bgshow');
+    } else {
+      navContainer.classList.remove('bgshow')
+    }
+    }
+    )
     </script>
 </body>
 </html>
