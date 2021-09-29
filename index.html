@@ -110,7 +110,7 @@
     // addEventListener('이벤트', '실행함수');
     btnToggle.addEventListener('click', function() {
       document.body.classList.toggle('bgcolor--blue');
-      bgContainer.classList.remove('bg__img');
+      bgContainer.classList.remove('bg--img--show');
       // document.body.style.removeProperty('background');
       // console.log('버튼클릭');
     });
@@ -120,14 +120,14 @@
     document.body.classList.remove('bgcolor--blue');
     document.body.classList.remove('bgcolor--gray');
     // document.body.style.removeProperty('background');
-    bgContainer.classList.remove('bg__img');
+    bgContainer.classList.remove('bg__img--show');
     }); 
     
     const bgGray = document.querySelector('.btn--bggray');
     bgGray.addEventListener('click', function() { 
       document.body.classList.add('bgcolor--gray');
       // document.body.style.removeProperty('background');
-      bgContainer.classList.remove('bg__img');
+      bgContainer.classList.remove('bg__img--show');
     });
 
     // let i = 0;
@@ -146,8 +146,8 @@
     const bgContainer = document.querySelector('.bg__img')
     const btnBgImg = document.querySelector('.btn--bgimg');
     btnBgImg.addEventListener('click', function() {
-      bgContainer.classList.add('bg__img');
       bgContainer.classList.toggle('bg__img--show');
+    
     
     });
     </script>
