@@ -90,7 +90,7 @@
       position: absolute;
       width: 100vw;
       height: 100vh;
-      background: url(/images/bridge.jpg) no-repeat;
+      background: url(images/bridge.jpg) no-repeat;
       transition: all 1s;
       opacity: 0;
     }
@@ -106,6 +106,27 @@
     .container {
       margin: 0 auto;
     }
+
+    .top--btn {
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      width: 50px;
+      height: 50px;
+      display: none;
+    }
+
+    .top--btnshow {
+      display: block;
+    }
+    
+    .top--btn img {
+      width: 100%;
+    }
+
+    .top--btn img:hover {
+      opacity: .5;
+    }
   </style>
 </head>
 <body>
@@ -120,6 +141,7 @@
       변형을 일으킨다면 바2개(--) -->
 </div>
 </div>
+<div class="top--btn" onclick="topup()"><img src="images/1df7ffa9c5dc1.png" alt=""></div>
 </body>
   <script>
     const btnToggle = document.querySelector('.btn_toggle');
@@ -160,22 +182,35 @@
     //   ++i;
     // }
     // });
+
     const bgContainer = document.querySelector('.bg__img')
     const btnBgImg = document.querySelector('.btn--bgimg');
     btnBgImg.addEventListener('click', function() {
       bgContainer.classList.toggle('bg__img--show');
     });
 
-    const  navContainer = document.querySelector('.bts');
+    const topBtn = document.querySelector('.top--btn');
     document.addEventListener('scroll', function() {
-    console.log(window.scrollY);
+    if (window.scrollY > 500) {
+      document.querySelector('.top--btn').style.display = "block";
+    } else {
+      document.querySelector('.top--btn').style.display = "none";
+    }
+   });
+   
+   function topup(){
+     window.scrollTo({top:0, left:0, behavior:'smooth'});
+   }
+
+    const navContainer = document.querySelector('.bts');
+    document.addEventListener('scroll', function() {
     if (window.scrollY > 100) {
       navContainer.classList.add('bgshow');
     } else {
-      navContainer.classList.remove('bgshow')
+      navContainer.classList.remove('bgshow');
     }
-    }
-    )
+    });
+    // property - 고정된 값 > 명사  mothod - 유동적인 값 > 동사 동작을 표현하는 함수같은 개념//
     </script>
 </body>
 </html>
