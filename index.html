@@ -113,11 +113,11 @@
       right: 50px;
       width: 50px;
       height: 50px;
-      display: none;
+      opacity: 0;
     }
 
     .top--btnshow {
-      display: block;
+      opacity: 1;
     }
     
     .top--btn img {
@@ -192,9 +192,9 @@
     const topBtn = document.querySelector('.top--btn');
     document.addEventListener('scroll', function() {
     if (window.scrollY > 500) {
-      document.querySelector('.top--btn').style.display = "block";
+      topBtn.classList.add('top--btnshow')
     } else {
-      document.querySelector('.top--btn').style.display = "none";
+      topBtn.classList.remove('top--btnshow')
     }
    });
    
