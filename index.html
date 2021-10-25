@@ -127,6 +127,27 @@
     .top--btn img:hover {
       opacity: .5;
     }
+
+    section {
+      width: 100%;
+      text-align: center;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #home {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+
+
   </style>
 </head>
 <body>
@@ -142,6 +163,34 @@
 </div>
 </div>
 <div class="top--btn" onclick="topup()"><img src="images/1df7ffa9c5dc1.png" alt=""></div>
+<section id="home">
+  <div class="wrapper">
+    <h1>Home</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur</h2>
+    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel adipisci, dolor dicta est sed iste reprehenderit quia fugit modi. Rerum recusandae quas facere, illum dignissimos praesentium facilis odio quidem sit.</h3>
+  </div>
+</section>
+<section id="about">
+  <div class="wrapper">
+    <h1>about</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, officiis. Illum accusantium et, nisi ea dolores natus earum velit iure soluta vitae nobis nesciunt corporis nemo aspernatur sed eligendi incidunt.</h3>
+  </div>
+</section>
+<section id="skills">
+  <div class="wrapper">
+    <h1>skills</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam minus suscipit molestiae quasi ea, earum amet nam incidunt soluta quia, aliquid officiis consequuntur sequi? Porro quibusdam totam aspernatur perferendis ab!</h3>
+  </div>
+</section>
+<section id="contact">
+  <div class="wrapper">
+    <h1>contact</h1>
+    <h2>Lorem ipsum dolor sit amet consectetur</h2>
+    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sunt ipsam sit debitis! Perspiciatis, sed! Deserunt at exercitationem placeat ex! Omnis aperiam ipsa quasi, possimus mollitia nostrum eveniet adipisci iure!</h3>
+  </div>
+</section>
 </body>
   <script>
     const btnToggle = document.querySelector('.btn_toggle');
@@ -150,6 +199,8 @@
       document.body.classList.toggle('bgcolor--blue');
       document.body.classList.remove('bgcolor--gray');
       bgContainer.classList.remove('bg__img--show');
+      const home = document.querySelector('#home');
+      home.scrollIntoView({behavior : "smooth", block: "center"});
       // document.body.style.removeProperty('background');
       // console.log('버튼클릭');
     });
@@ -160,6 +211,8 @@
     document.body.classList.remove('bgcolor--gray');
     // document.body.style.removeProperty('background');
     bgContainer.classList.remove('bg__img--show');
+    const about = document.querySelector('#about');
+      about.scrollIntoView({behavior : "smooth", block: "center"});
     }); 
     
     const bgGray = document.querySelector('.btn--bggray');
@@ -167,6 +220,8 @@
       document.body.classList.add('bgcolor--gray');
       // document.body.style.removeProperty('background');
       bgContainer.classList.remove('bg__img--show');
+      const skills = document.querySelector('#skills');
+      skills.scrollIntoView({behavior : "smooth", block: "center"});
     });
 
     // let i = 0;
@@ -187,6 +242,8 @@
     const btnBgImg = document.querySelector('.btn--bgimg');
     btnBgImg.addEventListener('click', function() {
       bgContainer.classList.toggle('bg__img--show');
+      const contact = document.querySelector('#contact');
+      contact.scrollIntoView({behavior : "smooth", block: "center"});
     });
 
     const topBtn = document.querySelector('.top--btn');
@@ -211,6 +268,7 @@
     }
     });
     // property - 고정된 값 > 명사  mothod - 유동적인 값 > 동사 동작을 표현하는 함수같은 개념//
+    
     </script>
 </body>
 </html>
